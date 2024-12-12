@@ -1,0 +1,12 @@
+<launch>
+    <!-- Publish images -->
+    <node pkg="hello_publish_image" name="pimage" type="publish_image.py">
+        <!-- <param name="images_path" value="$(find hello_publish_image)/datasets/20220412_change_CUT_loss_func/CUT/images/fake_B/*" /> -->
+        <!-- <param name="images_path" value="$(find hello_publish_image)/datasets/20220412_change_CUT_loss_func/CUT/images/real_A/*" /> -->
+        <param name="images_path" value="$(find hello_publish_image)/datasets/20220412_change_CUT_loss_func/CUT/images/real_B/*" />
+        <!-- <param name="images_path" value="/home/envy/myDatasets/winter2summer_unity_tiny_v1/trainA/*" /> -->
+    </node>
+
+    <node pkg="hello_segformer" name="segformer_node" type="hello_ros_segformer.py" />
+
+</launch>
